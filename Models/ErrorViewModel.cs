@@ -1,6 +1,6 @@
 using System;
 
-namespace rapport_ppf.Models
+namespace rapport.Models
 {
     public class ErrorViewModel
     {

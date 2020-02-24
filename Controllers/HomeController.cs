@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using rapport_ppf.Models;
+using rapport.Models;
 
-namespace rapport_ppf.Controllers
+namespace rapport.Controllers
 {
     public class HomeController : Controller
     {

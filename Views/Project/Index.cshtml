@@ -1,0 +1,39 @@
+﻿@model List<Project>
+
+
+@{
+
+    ViewData["Title"] = "Projektsuche";
+}
+
+<h1>Tagesraport - Projektsuche</h1>
+
+
+<form asp-controller="PModels" asp-action="Index2" method="get">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Projekt suchen" />
+    </p>
+</form>
+
+
+<table border="1">
+    @foreach (var project in Model)
+    {
+
+        <tr>
+            <td>
+                @project.Order
+            </td>
+            <td>
+                @project.ProjectName
+            </td>
+            <td>
+                @project.Customer
+            </td>
+        </tr>
+
+        @*@<span>@project.ProjectName</span>
+            <hr />*@
+    }
+</table>
