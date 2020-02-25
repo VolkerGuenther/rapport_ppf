@@ -41,13 +41,13 @@ namespace rapport.Controllers
        public IActionResult Index2(string searchString)
         //public async Task<IActionResult> Index2(string searchString)
         {
-            var PModels = from m in ProjectList
-                          select m;
+           // var PModels = from m in ProjectList
+             //             select m;
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                PModels = PModels.Where(s => s.Order.Contains(searchString));
-            }
+            //if (!string.IsNullOrEmpty(searchString))
+            //{
+            //    PModels = PModels.Where(s => s.Order.Contains(searchString));
+            //}
 
           return View("/Views/Project/Index.cshtml", ProjectList);
            // return View(await PModels.ToListAsync());
