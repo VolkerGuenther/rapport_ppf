@@ -7,14 +7,13 @@ using rapport.Models;
 
 namespace rapport.Controllers
 {
-    public class CountryViewModel : Controller
+    public class CountryController : Controller
     { 
         public IActionResult Index()
         {
-            var model = new Countries();
+            var model = new CountriesViewModel();
             model.Country = "CA";
-            //return View("/Views/Project/C_Index.cshtml", model);
-            return View(model);
+            return View("/Views/Project/Index.cshtml", model);
         }
     }
 }

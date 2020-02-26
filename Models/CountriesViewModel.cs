@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace rapport.Models
 {
-    public class Countries
+    public class CountriesViewModel
     {
         public string Country { get; set; }
 
