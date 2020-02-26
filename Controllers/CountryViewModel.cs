@@ -7,7 +7,7 @@ using rapport_ppf.Models;
 
 namespace rapport_ppf.Controllers
 {
-    public class Count
+    public class CountryViewModel : Controller
     { 
         public IActionResult Index()
         {
