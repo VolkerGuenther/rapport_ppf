@@ -11,9 +11,9 @@ namespace rapport.Controllers
     { 
         public IActionResult Index()
         {
-            var model = new CountriesViewModel();
+            var model = new CountryViewModel();
             model.Country = "CA";
-            return View("/Views/Project/Index.cshtml", model);
+            return View("/Views/Country/Index.cshtml", model);
         }
     }
 }
