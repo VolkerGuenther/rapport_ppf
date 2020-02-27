@@ -15,5 +15,19 @@ namespace rapport.Controllers
             model.Country = "CA";
             return View("/Views/Country/Index.cshtml", model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(CountryViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var msg = model.Country + " selected";
+                return RedirectToAction("IndexSuccess", new { message = msg });
+            }
+
+            // If we got this far, something failed; redisplay form.
+            return View("/Views/Country/Index.cshtml", model);
+        }
     }
 }
