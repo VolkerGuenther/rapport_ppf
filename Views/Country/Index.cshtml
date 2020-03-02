@@ -5,7 +5,7 @@
     ViewData["Title"] = "VieleLaender";
 }
 
-<form asp-controller="Home" asp-action="Index" method="post">
+<form asp-controller="Country" asp-action="Index" method="post">
     <select asp-for="Country" asp-items="Model.Laender"></select>
     <br /><button type="submit">Register</button>
 </form>
