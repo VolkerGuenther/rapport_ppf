@@ -13,24 +13,35 @@ namespace rapport_ppf.Controllers
         public IActionResult Index()
         {
 
-            var fi = new FileInfo(@"C:\Users\Volker\source\repos\rapport_ppf\Models\Essen.xlsx");
+            var fi = new FileInfo(@"C:\Users\Volker\source\repos\rapport_ppf\Models\Tagesrapporte_aktuell_3.xlsx");
             using (var p = new ExcelPackage(fi))
             {
-                //Get the Worksheet created in the previous codesample. 
-                //orkbook.Worksheets["MySheet"];
-                //Set the cell value using row and column.
-                //ws.Cells[2, 1].Value = "This is cell A2. It is set to bolds";
-                //The style object is used to access most cells formatting and styles.
-                //ws.Cells[2, 1].Style.Font.Bold = true;
-                //Save and close the package.
                 var ws = p.Workbook.Worksheets["Kopf"];
-                var value1 = ws.Cells[1,1].Value;
-                var value12 = ws.Cells[1, 2].Value;
-                Console.WriteLine(value1); 
-                Console.WriteLine(value12);
+
+                for (int id = 1; id <= 4; id++)
+                {
+                    var RapportId = ws.Cells[id, 1].Value;
+                    //var DatumDouble = ws.Cells[id, 2].Value;
+                    long dateNum = long.Parse(ws.Cells[id, 2].Value.ToString());
+                    DateTime TagesrappDatum = DateTime.FromOADate(dateNum);
+                    var Auftragsnummer = ws.Cells[id, 3].Value;
+                    var Kunde = ws.Cells[id, 4].Value;
+                    var Projektbeschreib = ws.Cells[id, 5].Value;
+                    var Standort = ws.Cells[id, 6].Value;
+                    var VerPerson = ws.Cells[id, 7].Value;
+                    var TotalPreis = ws.Cells[id, 8].Value;
+                    var Verrechnet = ws.Cells[id, 9].Value;
+
+                    //for (int TagRap = 1; TagRap <= 2; TagRap += 1)
+                    //{
+                    //    var value = ws.Cells[id, TagRap].Value;
+                    //}
+                }
                 p.Save();
             }
-            return View();
+            return View("/Models/ProjectTages.cs", "/Views/Project/Index.cshtml");
+
         }
+
     }
 }
