@@ -23,7 +23,10 @@ namespace rapport_ppf.Controllers
 
             // Lebensdauer: Ende Index Methode
             var fi = new FileInfo(@"C:\Users\Volker\source\repos\rapport_ppf\Models\Tagesrapporte_aktuell_3.xlsx");
-
+            if (!fi.Exists)
+            {
+                fi = new FileInfo(@"C:\Users\IFLRGU\Documents\Kunden\Prüflabor\Tagesrapporte_aktuell_3.xlsx");
+            }
                 
             // Lebensdauer: Variable p an den using Block gebunden
             using (var p = new ExcelPackage(fi))

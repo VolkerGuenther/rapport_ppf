@@ -1,0 +1,66 @@
+﻿@model List<rapport_ppf.Models.Order>
+
+
+@{
+
+    ViewData["Title"] = "Projektsuche";
+}
+
+<h1>Tagesraport - Projektsuche</h1>
+
+
+<form asp-controller="PModels" asp-action="Index2" method="get">
+    <p>Projekt</p>
+    <p>
+        Kunde
+        <select name="Kunden">
+            <option>a </option>
+        </select>
+    </p>
+    <p>
+        Standort
+        <select name="Standorte">
+            <option> a</option>
+            <option> b</option>
+            <option> c</option>
+        </select>
+    </p>
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Projekt suchen" />
+    </p>
+</form>
+
+
+<table border="1">
+    @foreach (var order  in Model)
+    {
+
+    <tr>
+        <td>
+            @order.Auftragsnummer
+        </td>
+        <td>
+            @order.Kunde
+        </td>
+        <td>
+            @order.Projektbeschreib
+        </td>
+        <td>
+            @order.Standort
+        </td>
+        <td>
+            @order.VerPerson
+        </td>
+        <td>
+            @order.TotalPreis
+        </td>
+        <td>
+            @order.Verrechnet
+        </td>
+    </tr>
+
+        @*@<span>@project.ProjectName</span>
+            <hr />*@
+    }
+</table>
